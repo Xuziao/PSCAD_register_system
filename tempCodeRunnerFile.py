@@ -1,9 +1,7 @@
-import csv
-def create_csv():
-    path = "aa.csv"
-    with open(path,'wb') as f:
-        csv_write = csv.writer(f)
-        csv_head = ["good","bad"]
-        csv_write.writerow(csv_head)
-
-create_csv()
+    appoint_time = input("请输入时间")
+    get_date = appoint_time.split('-')
+    begin_time =  get_date[0:4]
+    begin_time[0] += '年'
+    begin_time[1] += '月'
+    begin_time[2] += '日'
+    print(begin_time)

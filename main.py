@@ -27,9 +27,14 @@ def initialize():
 def input_appointment():
     name = input("请输入您的姓名：")
     date.append(name.split())
-    print("接下来我将询问您预定使用的月份，日期和起止时间\n请您以阿拉伯数字分别输入并以回车结尾\n例如2023-2-28-13:30-14:00 代表预约在2023.2.28 13：30到14：00")
+    print("接下来我将询问您预定使用的时间和持续时间\n请您以阿拉伯数字分别输入并以回车结尾\n例如2023-2-28-13:30-14:30 代表预约在2023.2.28 13：30结束于14：30")
     appoint_time = input("请输入时间")
-    date.append(appoint_time.split('-'))
+    get_date = appoint_time.split('-')
+    begin_time =  get_date[0:4]
+    begin_time[0] += '年'
+    begin_time[1] += '月'
+    begin_time[2] += '日'
+    print(begin_time)
 
 def check_appointment():
     print("正在为您打开预约数据文件，请在浏览完毕后关闭文件")
