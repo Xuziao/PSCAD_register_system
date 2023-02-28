@@ -17,7 +17,7 @@ def initialize():
     except FileNotFoundError:
         error_message = "预约数据未找到，可能被人为删除而造成数据丢失！\n正在重新生成新的数据文件"
         print(error_message)
-        with open(file_path,'w') as f:
+        with open(file_path,'w',newline='') as f:
             write = csv.writer(f)
             head = ["姓名","年","月","日","起始时间","终止时间"]
             write.writerow(head) 
@@ -41,7 +41,7 @@ def check_appointment():
     os.system('start ./预约表.csv')
 
 def write_date():
-    with open(file_path,'a') as f:
+    with open(file_path,'a',newline='') as f:
         write = csv.writer(f)
         write.writerow(date)
     print("写入成功！")
